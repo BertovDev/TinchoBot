@@ -191,4 +191,4 @@ client.on('message', (message) => {
   }); //FIN EVENTO MESSAGE 
 
 
-client.login('NzEyMTI4MjI5MTU4NDIwNTkw.XsNDGA.ZjhcDsN-oNfIDf7EKs7uv-WKFw4'); //AQUI SE COLOCA EL TOKEN DE TU BOT
+client.login(''); //AQUI SE COLOCA EL TOKEN DE TU BOT DENTRO DE LAS COMILLAS
