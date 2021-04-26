@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js'); //Importo libreria de discord
 const client = new Discord.Client();
 //AGREGAMOS EL USO DEL PREFIX
 const config = require("./config.json");
@@ -18,14 +18,14 @@ client.on('message', (message) => {
     if (!message.content.startsWith(prefix)) return; 
     if (message.author.bot) return;
 
-      if (command === 'frases') {
-        message.channel.send('Tincho puede decir : colo , risa , pelotudo , ahi ');
+      /*if (command === 'frases') { //comandos disponibles para audio
+        message.channel.send('Tincho puede decir : colo , risa , ahi ');
       }
     else
       if(command === 'help') {
         message.channel.send("t-<frase> para que tinchito te diga algo lindo");
         message.channel.send("t-frases para ver lo quen tincho puede decir ");
-      }
+      }*/
  
       
 
@@ -37,14 +37,21 @@ client.on('message', (message) => {
 
     //Sonidos
     switch(command){
-
+        case 'help':
+          message.channel.send("t-<frase> para que tinchito te diga algo lindo");
+          message.channel.send("t-frases para ver lo quen tincho puede decir ");
+          message.channel.send("t-nv y tincho se va del canal");
+        break;
+        case 'frases':
+          message.channel.send('Tincho puede decir : colo , risa , fede , pavi , mucho , ahi , plata , data , amigos , naze');
+        break;
         case 'colo':
         if(!canalvoz) {
-          message.channel.send('Mira wachin unite a un canal para usarme xd');
+          message.channel.send('Unite a un canal para usarme xd');
         } else {
             canalvoz.join()
             .then(connection => {
-                const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/colorado.mp3');
+                const dispatcher = connection.play('./audios/colorado.mp3');
                 message.channel.send('reproducciendo');
             })
             .catch(console.error);
@@ -52,11 +59,11 @@ client.on('message', (message) => {
         break;
         case 'risa':
           if(!canalvoz) {
-            message.channel.send('Mira wachin unite a un canal para usarme xd');
+            message.channel.send('Unite a un canal para usarme xd');
           } else {
               canalvoz.join()
               .then(connection => {
-                  const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/risa.mp3');
+                  const dispatcher = connection.play('./audios/risa.mp3');
                   message.channel.send('reproducciendo');
               })
               .catch(console.error);
@@ -64,11 +71,11 @@ client.on('message', (message) => {
           break;
           case 'mucho':
             if(!canalvoz) {
-              message.channel.send('Mira wachin unite a un canal para usarme xd');
+              message.channel.send('Unite a un canal para usarme xd');
             } else {
                 canalvoz.join()
                 .then(connection => {
-                    const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/WhatsApp Ptt 2018-11-11 at 23.39.23.ogg');
+                    const dispatcher = connection.play('./audios/WhatsApp Ptt 2018-11-11 at 23.39.23.ogg');
                     message.channel.send('reproducciendo');
                 })
                 .catch(console.error);
@@ -76,11 +83,11 @@ client.on('message', (message) => {
             break;
             case 'ahi':
               if(!canalvoz) {
-                message.channel.send('Mira wachin unite a un canal para usarme xd');
+                message.channel.send('Unite a un canal para usarme xd');
               } else {
                   canalvoz.join()
                   .then(connection => {
-                      const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/ahi.mp3');
+                      const dispatcher = connection.play('./audios/ahi.mp3');
                       message.channel.send('reproducciendo');
                   })
                   .catch(console.error);
@@ -88,11 +95,11 @@ client.on('message', (message) => {
               break;
               case 'plata':
                 if(!canalvoz) {
-                  message.channel.send('Mira wachin unit a un canal para usarme xd');
+                  message.channel.send('Unit a un canal para usarme xd');
                 } else {
                   canalvoz.join()
                   .then(connection => {
-                    const  dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/plata.mp3');
+                    const  dispatcher = connection.play('./audios/plata.mp3');
                     message.channel.send('reproducciendo');
                   })
                   .catch(console.error);
@@ -100,11 +107,11 @@ client.on('message', (message) => {
               break;
               case 'data':
                 if(!canalvoz) {
-                  message.channel.send('Mira wachin unite a un canal para usarme');
+                  message.channel.send('Unite a un canal para usarme');
                 } else {
                   canalvoz.join()
                   .then(connection => {
-                    const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/data.mp3');
+                    const dispatcher = connection.play('./audios/data.mp3');
                     message.channel.send('reproducciendo');
                   })
                   .catch(console.error);
@@ -112,23 +119,23 @@ client.on('message', (message) => {
                 break;
                 case 'amigos':
                   if(!canalvoz) {
-                    message.channel.send('Mira wachin unite a un canal para usarme');
+                    message.channel.send('Unite a un canal para usarme');
                   } else {
                     canalvoz.join()
                     .then(connection => {
-                      const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/amigos.mp3');
+                      const dispatcher = connection.play('./audios/amigos.mp3');
                       message.channel.send('reproducciendo');
                     })
                     .catch(console.error);
                   }
                 break;
-                case 'puta':
+                case 'pavi':
                   if(!canalvoz) {
-                    message.channel.send('Mira wachin unite a un canal para usarme');
+                    message.channel.send('Unite a un canal para usarme');
                   } else {
                     canalvoz.join()
                     .then(connection => {
-                      const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/puta2.mp3');
+                      const dispatcher = connection.play('./audios/pavi.mp3');
                       message.channel.send('reproducciendo');
                     })  
                     .catch(console.error);
@@ -136,11 +143,11 @@ client.on('message', (message) => {
                 break;
                 case 'naze':
                   if(!canalvoz) {
-                    message.channel.send('Mira wachin unite a un canal para usarme');
+                    message.channel.send('Unite a un canal para usarme');
                   } else {
                     canalvoz.join()
                     .then(connection => {
-                      const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/naze.mp3');
+                      const dispatcher = connection.play('./audios/naze.mp3');
                       message.channel.send('reproducciendo');
                     })
                     .catch(console.error);
@@ -148,7 +155,7 @@ client.on('message', (message) => {
                 break;
                 case 'nv':
                   if(!canalvoz) {
-                    message.channel.send('Mira wachin unite a un canal para usarme xd');
+                    message.channel.send('Unite a un canal para usarme xd');
                   } else {
                     message.channel.send('Me re fui nv.').then(() => {
                         canalvoz.leave();
@@ -156,13 +163,13 @@ client.on('message', (message) => {
                     }).catch(error => console.log(error));
                   }
                   break;
-                  case 'pelotudo':
+                  case 'fede':
                     if(!canalvoz){
-                      message.channel.send('Mira wachin unite a un canal para usarme xd');
+                      message.channel.send('Unite a un canal para usarme xd');
                     } else {
                       canalvoz.join()
                       .then(connection => {
-                        const dispatcher = connection.play('C:/Users/Bautikiller/Desktop/audios/pelotudo.mp3');
+                        const dispatcher = connection.play('./audios/fede.mp3');
                         message.channel.send('reproduciendo');
                       })
                       .catch(console.error);
@@ -184,4 +191,4 @@ client.on('message', (message) => {
   }); //FIN EVENTO MESSAGE 
 
 
-client.login(config.token);
+client.login('NzEyMTI4MjI5MTU4NDIwNTkw.XsNDGA.ZjhcDsN-oNfIDf7EKs7uv-WKFw4');
